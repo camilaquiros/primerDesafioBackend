@@ -1,42 +1,83 @@
 class ProductManager {
-    products;
-    contructor(title, description, price, thumbnail, code, stock) {
-        this.products = []
-        this.products.title = title;
-        this.products.description = description;
-        this.products.price = price;
-        this.products.thumbnail = thumbnail;
-        this.products.code = code;
-        this.products.stock = stock;
-    }
-    addProduct(product) {
-        if(this.products.find(product.code === code)) {
-            return console.log('Producto ya existente')
-        }
-        else{
-            this.products.code++;
-            return this.products.push(product)
-        }
-    }
-    getproducts() {
+    products = [];
+    product = Product;
+
+    getProducts() {
         return this.products;
     }
-    getproductsById(search) {
-        return this.products.find(search === code)
+
+    addProduct(product) {
+        if (this.getProducts().find((p) => p.code == product.code)) 
+            return console.log(`Producto ${product.title} ya existente`)
+        else
+            product.id = this.getProducts().length + 1;
+            this.products.push(product)
+
+    }
+
+    getProductsById(product) {
+        if(this.getProducts().find((search) => search.id == product)){
+            return console.log(this.getProducts().find((search) => search.id == product))
+        } else{
+            return console.log('Producto no encontrado')
+        }
+    }
+}
+
+class Product extends ProductManager {
+    contructor(title, description, price, thumbnail, code, stock) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.thumbnail = thumbnail;
+        this.code = code;
+        this.stock = stock;
     }
 }
 
 const nuevoProducto = new ProductManager();
 
-const producto1 = {
+const product1 = {
     title: 'celular',
     description: 'Lorem Ipsum',
     price: 1000,
     thumbnail: 'thumbnail',
-    code: 1,
+    code: 'abc123',
     stock: 10
 }
 
-nuevoProducto.addProduct(producto1);
+const product2 = {
+    title: 'computadora',
+    description: 'Lorem Ipsum',
+    price: 5000,
+    thumbnail: 'thumbnail',
+    code: 'abc124',
+    stock: 10
+}
 
-console.log(producto1.getproducts())
+const product3 = {
+    title: 'tablet',
+    description: 'Lorem Ipsum',
+    price: 3000,
+    thumbnail: 'thumbnail',
+    code: 'abc125',
+    stock: 10
+}
+
+const product3SameCode = {
+    title: 'tablet',
+    description: 'Lorem Ipsum',
+    price: 3000,
+    thumbnail: 'thumbnail',
+    code: 'abc125',
+    stock: 10
+}
+
+nuevoProducto.addProduct(product1);
+nuevoProducto.addProduct(product2);
+nuevoProducto.addProduct(product3);
+nuevoProducto.addProduct(product3SameCode);
+
+console.log(nuevoProducto.getProducts())
+console.log(nuevoProducto.getProductsById(2))
+console.log(nuevoProducto.getProductsById(4))
