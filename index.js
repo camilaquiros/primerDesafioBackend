@@ -73,11 +73,15 @@ const product3SameCode = {
     stock: 10
 }
 
+console.log(nuevoProducto.getProducts())
+
 nuevoProducto.addProduct(product1);
 nuevoProducto.addProduct(product2);
 nuevoProducto.addProduct(product3);
-nuevoProducto.addProduct(product3SameCode);
 
 console.log(nuevoProducto.getProducts())
+
+nuevoProducto.addProduct(product3SameCode);
+
 console.log(nuevoProducto.getProductsById(2))
 console.log(nuevoProducto.getProductsById(4))

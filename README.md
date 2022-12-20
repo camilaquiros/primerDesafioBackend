@@ -1,4 +1,6 @@
-* Clases con ECMAScript y ECMAScript avanzado
+## DESAFÍO ENTREGABLE - PROCESO DE TESTING
+
+# Clases con ECMAScript y ECMAScript avanzado
 - Se creará una instancia de la clase “ProductManager”
 - Se llamará “getProducts” recién creada la instancia,  debe devolver un arreglo vacío []
 - Se llamará al método “addProduct” con los campos:
