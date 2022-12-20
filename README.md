@@ -4,6 +4,7 @@
 - Se creará una instancia de la clase “ProductManager”
 - Se llamará “getProducts” recién creada la instancia,  debe devolver un arreglo vacío []
 - Se llamará al método “addProduct” con los campos:
+
     ```bash
     title: “producto prueba”
     description:”Este es un producto prueba”
@@ -12,6 +13,7 @@
     code:”abc123”,
     stock:25
     ```
+    
 - El objeto debe agregarse satisfactoriamente con un id generado automáticamente SIN REPETIRSE
 - Se llamará el método “getProducts” nuevamente, esta vez debe aparecer el producto recién agregado
 - Se llamará al método “addProduct” con los mismos campos de arriba, debe arrojar un error porque el código estará repetido.
